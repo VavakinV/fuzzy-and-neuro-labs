@@ -1,0 +1,57 @@
+[System]
+Name='Harvest'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=11
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='lom'
+
+[Input1]
+Name='moisture'
+Range=[0 100]
+NumMFs=3
+MF1='low':'trimf',[0 0 30]
+MF2='medium':'trimf',[20 50 80]
+MF3='high':'trimf',[60 100 100]
+
+[Input2]
+Name='temperature'
+Range=[5 35]
+NumMFs=3
+MF1='low':'trimf',[5 5 12]
+MF2='optimal':'trimf',[10 18 25]
+MF3='high':'trimf',[22 35 35]
+
+[Input3]
+Name='fertilizer'
+Range=[0 200]
+NumMFs=3
+MF1='low':'trimf',[0 0 50]
+MF2='medium':'trimf',[30 90 150]
+MF3='high':'trimf',[120 200 200]
+
+[Output1]
+Name='harvest'
+Range=[0 10]
+NumMFs=3
+MF1='low':'trimf',[0 0 2.5]
+MF2='medium':'trimf',[1.5 4 6.5]
+MF3='high':'trimf',[5.5 10 10]
+
+[Rules]
+3 2 3, 3 (1) : 1
+3 2 2, 3 (1) : 1
+2 2 3, 3 (1) : 1
+1 0 1, 1 (1) : 1
+1 1 0, 1 (1) : 1
+2 2 2, 2 (1) : 1
+1 3 0, 1 (1) : 1
+3 3 0, 1 (1) : 1
+1 2 3, 2 (1) : 1
+3 3 3, 2 (1) : 1
+0 1 1, 1 (1) : 1
