@@ -10,11 +10,11 @@ GOAL = (4, 4)
 OBSTACLES = [(1, 3), (2, 1)]
 
 # Гиперпараметры Q-learning
-EPISODES = 2000
+EPISODES = 1000
 ALPHA = 0.1
 GAMMA = 0.9
 EPSILON = 1.0
-EPSILON_DECAY = 0.5
+EPSILON_DECAY = 0.995
 MIN_EPSILON = 0.01
 
 # Инициализация Q-table
@@ -130,8 +130,8 @@ def test_agent():
     print_grid(state)
     print(f"Тест завершён за {steps} шагов.")
 
+rewards = train_q_learning(gamma=0.1)
 
-rewards = train_q_learning()
 
 # Кумулятивная сумма наград
 cumulative_rewards = np.cumsum(rewards)
