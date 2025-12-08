@@ -130,7 +130,7 @@ def test_agent():
     print_grid(state)
     print(f"Тест завершён за {steps} шагов.")
 
-rewards = train_q_learning(gamma=0.1)
+rewards = train_q_learning(epsilon_decay=0.9995)
 
 
 # Кумулятивная сумма наград
