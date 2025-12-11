@@ -204,7 +204,7 @@ def load_texts_from_file(filename):
 economy_texts = load_texts_from_file("Lab15/economy.txt")
 politics_texts = load_texts_from_file("Lab15/politics.txt")
 culture_texts  = load_texts_from_file("Lab15/culture.txt")
-science_texts  = load_texts_from_file("Lab15/science.txt")
+science_texts  = load_texts_from_file("Lab15/technology.txt")
 sport_texts    = load_texts_from_file("Lab15/sports.txt")
 
 # Формируем тестовую выборку
